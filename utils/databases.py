@@ -1,10 +1,12 @@
 import sqlite3
 import pandas as pd
+import os
 
 def get_db_connection():
 # Connect to the in-memory SQLite database
+    environment =  os.getenv("environment")
     try:
-        connection = sqlite3.connect('belong.db')
+        connection = sqlite3.connect(f'{environment}_belong.db')
         
         print("database connection successful")
         return connection

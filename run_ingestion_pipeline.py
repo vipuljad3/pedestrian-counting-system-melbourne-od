@@ -2,10 +2,14 @@ import utils.utilities as utils_
 import ingestion._init
 import utils.databases as db
 import pandas as pd
+import os
+
+environment = 'prod'
+os.environ["environment"] = environment
 
 NAMESPACE = 'open_data_ingestion'
 
-config_path = 'ingestion/open_data_ingestion/config.yaml'
+config_path = 'ingestion/open_data_ingestion/config/config.yaml'
 config = utils_.read_config(config_path)
 
 for dataset, args in config[NAMESPACE].items():

@@ -75,6 +75,11 @@ python3 run_ingestion_pipeline.py
 python3 extract_archived_zip_count.py
 ```
 
+#### Unit Testing.
+unit testing is performed by setting the environment variable to test and reading test_config.yaml file.
+The simple unit test includes assertion methods to check if the count of the rows match.
+
+
 #### The data analysis.
 There are two files which can be run for data analysis.
 ```
@@ -82,6 +87,10 @@ There are two files which can be run for data analysis.
  └── data_analysis.ipynb (jupyter notebook)
  ```
 They do the same job
+For analysis documentation please refer to the comments in **data_analysis.py**
+Each step is thoroughly defined.
+
+
 
 
 

@@ -30,12 +30,10 @@ counts_df = pd.concat([archive_count, counts_df], ignore_index= True)
 ## FIlling out the missing values as the new datasets does not have the variables like day, month, year, time
 counts_df['timestamp'] = pd.to_datetime(counts_df['timestamp'])
 counts_df['Day'] = counts_df['timestamp'].dt.day_name()
-#counts_df['Day'] = pd.to_datetime(counts_df['Day'], format='%w').dt.strftime('%A')
 counts_df['Mdate'] = counts_df['timestamp'].dt.day
 counts_df['Month'] = counts_df['timestamp'].dt.month
 counts_df['Year'] = counts_df['timestamp'].dt.year
 counts_df['Time'] = counts_df['timestamp'].dt.hour
-#counts_df = counts_df[['locationid','timestamp','Year', 'Month', 'Time', 'Sensor_Name', 'total_of_directions']]
 
 #Joining on the sensor location dataset on locationID to get the names of the locations for the new datasets.
 joined_results = pd.merge(counts_df, sensor_locations_df, left_on='locationid', right_on='location_id', how='left')

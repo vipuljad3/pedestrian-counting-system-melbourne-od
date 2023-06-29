@@ -8,6 +8,6 @@ open_data_ingestion :
 
   pedestrian-counting-system-monthly-counts-per-hour :
     lookback : True
-    lookback_days : 1096
+    lookback_days : 60
     remove_staged : True
     db_load_type : replace
